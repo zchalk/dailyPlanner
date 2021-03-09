@@ -4,6 +4,8 @@
 
 This week I created a daily planner that could store plans during working hours of the current day. These plans will persist even after the user closes the page, even if they are changed.
 
+https://zchalk.github.io/dailyPlanner/
+
 ![my site](assets/images/me.png)
 
 
