@@ -1,4 +1,4 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Work Day Scheduler
 
 This week I created a daily planner that could store plans during working hours of the current day. These plans will persist even after the user closes the page, even if they are changed. The hour blocks change colors based on the past, present, and future to help the user further keep track of their day. I also included a button to update the time so the user does not have to refresh the page to refresh the time. Included are the criteria which I followed:
 
