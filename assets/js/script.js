@@ -13,6 +13,10 @@ for (let i = 0; i < hoursInDay.length; i++) {
         plan: "",
 })}
 
+if (now > 18) {
+    window.localStorage.clear();
+}
+
 eventObjects.forEach(function(eventObject) {
     var div = $('<div>').addClass('timeContainers').data('hour',eventObject.time)
     var timeDisplay = $('<p>').addClass('timeDisplay').text(eventObject.time);
