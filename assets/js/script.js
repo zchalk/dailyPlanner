@@ -2,7 +2,7 @@ var eventContainer = $("#eventContainer");
 var currentDay = $("#currentDay");
 var today = moment ();
 var now = moment().hours();
-var hoursInDay = ["9","10", "11", "12", "13", "14", "15", "16", "17"];
+var hoursInDay = [ "9", "10", "11", "12", "13", "14", "15", "16", "17"];
 var eventObjects = [];
 
 $(currentDay).text(today.format("MMM Do, YYYY, h:mm"));
@@ -17,15 +17,15 @@ eventObjects.forEach(function(eventObject) {
     var div = $('<div>').addClass('timeContainers').data('hour',eventObject.time)
     var timeDisplay = $('<p>').addClass('timeDisplay').text(eventObject.time);
     var planDisplay = $('<input>').addClass('planDisplay').val(eventObject.plan);
-    var saveButton = $('<button>').text("save").addClass('saveButton').data('hour',eventObject.time);
+    var saveButton = $('<button>').addClass('saveButton').data('hour',eventObject.time);
 
     div.append(timeDisplay, planDisplay, saveButton)
     eventContainer.append(div)
 
 })
 
-var refreshButton = $('<button>').text("refresh time").data('time',today);
-eventContainer.append(refreshButton)
+var refreshButton = $('<button>').text("refresh time").addClass('refreshButton').data('time',today);
+eventContainer.prepend(refreshButton)
 
 
 $("button.saveButton").on('click', function(event) {
@@ -41,20 +41,19 @@ $("button.saveButton").on('click', function(event) {
 
 refreshButton.on('click', function(event) {
     today = moment();
-    $(currentDay).text(today.format("MMM Do, YYYY, h:mm"));
+    $(currentDay).text(today.format("MMM Do, YYYY, HH:mm"));
 
 })
 
 $("div.timeContainers").each(function() {
     var planHour = $(this)
-    if (planHour.data('hour') === now) {
+    if (planHour.data('hour') == now) {
         planHour.addClass('present');
       }
-      if (planHour.data('hour') < now) {
+      else if (planHour.data('hour') < now) {
         planHour.addClass('past');
       }
       else {
           planHour.addClass('future');
       }
 })
-console.log(now);
