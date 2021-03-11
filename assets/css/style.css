@@ -24,26 +24,6 @@ textarea{
   padding: 1rem 1rem;
 }
 
-.description{
-  white-space: pre-wrap;
-}
-
-.time-block{
-  text-align: center;
-  border-radius: 15px;
-}
-
-.row {
-  white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;;
-}
-
-.hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
-}
 #eventContainer {
   display: flex;
   flex-direction: column;
